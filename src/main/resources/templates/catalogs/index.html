@@ -1,0 +1,18 @@
+<style>
+    .container {
+        width: 980px;
+        margin: auto;
+    }
+</style>
+
+<div class="container" th:each="catalog : ${categories}">
+    <div class="">
+        <h1 th:text="${catalog.title}"></h1>
+        <p th:text="${catalog.desc}"></p>
+    </div>
+
+
+    <div th:each="dataset : ${catalog.datasets}">
+        <h4 th:text="${dataset.title}">Example dataset 1</h4>
+    </div>
+</div>
