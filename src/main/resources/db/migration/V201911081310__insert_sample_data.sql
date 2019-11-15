@@ -1,8 +1,8 @@
 INSERT INTO users(email, created_at, updated_at)
 VALUES ('is.kim@promptech.co.kr', NOW(), NOW());
 
-INSERT INTO categories(title, `desc`, created_at, updated_at)
-VALUES('교통', '교통 분야 데이터 카탈로그', NOW(), NOW());
+INSERT INTO categories(title, `desc`, user_id, created_at, updated_at)
+VALUES('교통', '교통 분야 데이터 카탈로그', 1, NOW(), NOW());
 
 INSERT INTO datasets(category_id, title, `desc`, user_id, used, license, created_at, updated_at)
 VALUES(1, '교통사고통계', '교통사고통계', 1, true, 'https://creativecommons.org/publicdomain/zero/1.0/', NOW(), NOW());
