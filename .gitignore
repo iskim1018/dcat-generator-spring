@@ -1,5 +1,3 @@
-src/main/resources/application.yml
-
 *.class
 
 HELP.md
@@ -73,3 +71,5 @@ transaction-logs
 secrets.yml
 .gradletasknamecache
 .sts4-cache
+
+src/main/resources/application.yml
