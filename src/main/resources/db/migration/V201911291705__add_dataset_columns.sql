@@ -1,0 +1,10 @@
+ALTER TABLE `datasets` ADD `access_rights` VARCHAR(255);
+ALTER TABLE `datasets` ADD `landing_page` VARCHAR(255) NOT NULL DEFAULT '';
+ALTER TABLE `datasets` ADD `rights` VARCHAR(255);
+ALTER TABLE `datasets` ADD `accrual_periodicity` VARCHAR(255);
+ALTER TABLE `datasets` ADD `spatial` LONGTEXT;
+ALTER TABLE `datasets` ADD `spatial_resolution_in_meters` VARCHAR(20);
+ALTER TABLE `datasets` ADD `temporal` VARCHAR(255);
+ALTER TABLE `datasets` ADD `temporal_resolution` VARCHAR(255);
+ALTER TABLE `datasets` ADD `version` VARCHAR(50);
+ALTER TABLE `datasets` ADD `version_description` VARCHAR(255);

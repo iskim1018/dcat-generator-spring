@@ -2,7 +2,7 @@ package kr.co.promptech.dcat.controller.rest;
 
 import kr.co.promptech.dcat.model.Category;
 import kr.co.promptech.dcat.repository.CategoryRepository;
-import kr.co.promptech.dcat.repository.PlatformRepository;
+import kr.co.promptech.dcat.service.TokenService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,30 +20,35 @@ import java.util.List;
 public class ApiMetadataController {
     private static final Logger logger = LoggerFactory.getLogger(ApiMetadataController.class);
 
-    public static final String TOKEN_PREFIX = "Bearer ";
-    public static final String HEADER_STRING = "Authorization";
-
-    @Autowired
-    private PlatformRepository platformRepository;
-
     @Autowired
     private CategoryRepository categoryRepository;
 
+    @Autowired
+    private TokenService tokenService;
+
     @GetMapping(value ="", produces = { MediaType.APPLICATION_XML_VALUE })
     public String index(HttpServletRequest request, Model model) {
-        String token = request.getHeader(HEADER_STRING);
+        String token = request.getHeader(TokenService.HEADER_STRING);
 
-        if (token != null && token.startsWith(TOKEN_PREFIX)) {
-            token = token.replace(TOKEN_PREFIX, "");
+        if (tokenService.isValid(token)) {
+            List<Category> categories = categoryRepository.findAll();
+            model.addAttribute("categories", categories);
 
-            if (platformRepository.findByApiKey(token) != null) {
-                List<Category> categories = categoryRepository.findAll();
-                model.addAttribute("categories", categories);
-
-                return "sample/index.xml";
-            }
+            return "dcat/index.xml";
         }
+        return "errors/401.xml";
+    }
 
+    @GetMapping(value ="/datasets", produces = { MediaType.APPLICATION_XML_VALUE })
+    public String datasets(HttpServletRequest request, Model model) {
+        String token = request.getHeader(TokenService.HEADER_STRING);
+
+        if (tokenService.isValid(token)) {
+            List<Category> categories = categoryRepository.findAll();
+            model.addAttribute("categories", categories);
+
+            return "dcat/datasets.xml";
+        }
         return "errors/401.xml";
     }
 }

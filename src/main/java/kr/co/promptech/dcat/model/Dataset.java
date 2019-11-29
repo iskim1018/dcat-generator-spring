@@ -33,6 +33,27 @@ public class Dataset {
 
     private String license;
 
+    private String accessRights;
+
+    private String landingPage;
+
+    private String rights;
+
+    private String accrualPeriodicity;
+
+    @Column(columnDefinition = "LONGTEXT")
+    private String spatial;
+
+    private String spatialResolutionInMeters;
+
+    private String temporal;
+
+    private String temporalResolution;
+
+    private String version;
+
+    private String versionDescription;
+
     private Date createdAt;
     private Date updatedAt;
 
@@ -114,5 +135,85 @@ public class Dataset {
 
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public String getAccessRights() {
+        return accessRights;
+    }
+
+    public void setAccessRights(String accessRights) {
+        this.accessRights = accessRights;
+    }
+
+    public String getLandingPage() {
+        return landingPage;
+    }
+
+    public void setLandingPage(String landingPage) {
+        this.landingPage = landingPage;
+    }
+
+    public String getRights() {
+        return rights;
+    }
+
+    public void setRights(String rights) {
+        this.rights = rights;
+    }
+
+    public String getAccrualPeriodicity() {
+        return accrualPeriodicity;
+    }
+
+    public void setAccrualPeriodicity(String accrualPeriodicity) {
+        this.accrualPeriodicity = accrualPeriodicity;
+    }
+
+    public String getSpatial() {
+        return spatial;
+    }
+
+    public void setSpatial(String spatial) {
+        this.spatial = spatial;
+    }
+
+    public String getSpatialResolutionInMeters() {
+        return spatialResolutionInMeters;
+    }
+
+    public void setSpatialResolutionInMeters(String spatialResolutionInMeters) {
+        this.spatialResolutionInMeters = spatialResolutionInMeters;
+    }
+
+    public String getTemporal() {
+        return temporal;
+    }
+
+    public void setTemporal(String temporal) {
+        this.temporal = temporal;
+    }
+
+    public String getTemporalResolution() {
+        return temporalResolution;
+    }
+
+    public void setTemporalResolution(String temporalResolution) {
+        this.temporalResolution = temporalResolution;
+    }
+
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
+    public String getVersionDescription() {
+        return versionDescription;
+    }
+
+    public void setVersionDescription(String versionDescription) {
+        this.versionDescription = versionDescription;
     }
 }
