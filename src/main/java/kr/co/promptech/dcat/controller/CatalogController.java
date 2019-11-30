@@ -10,7 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.thymeleaf.spring5.SpringTemplateEngine;
 
 import java.util.List;
 
@@ -18,9 +17,6 @@ import java.util.List;
 @RequestMapping("/catalogs")
 public class CatalogController {
     private static final Logger logger = LoggerFactory.getLogger(CatalogController.class);
-
-    @Autowired
-    SpringTemplateEngine springTemplateEngine;
 
     @Autowired
     private CatalogRepository catalogRepository;
@@ -31,14 +27,5 @@ public class CatalogController {
         model.addAttribute("catalogs", catalogs);
 
         return "catalogs/index";
-    }
-
-    @GetMapping(value ="", produces = { MediaType.APPLICATION_XML_VALUE })
-    public String indexXml(Model model){
-        logger.debug("call indexXml");
-        List<Catalog> catalogs = catalogRepository.findAll();
-        model.addAttribute("catalogs", catalogs);
-
-        return "catalogs/index.xml";
     }
 }

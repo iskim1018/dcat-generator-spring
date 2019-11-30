@@ -12,7 +12,7 @@ public class Dataset {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne(fetch = FetchType.EAGER)
+    @OneToOne
     @JoinColumn(name="user_id", referencedColumnName="id")
     private User user;
 
@@ -21,11 +21,11 @@ public class Dataset {
     @Column(columnDefinition = "TEXT")
     private String desc;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name="dataset_id")
     private Set<FileData> fileData;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name="dataset_id")
     private Set<DatasetKeyword> keywords;
 

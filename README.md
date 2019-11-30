@@ -30,12 +30,7 @@
     ```
   - localhost의 TCP port 8080을 사용(기존 8080 port를 사용하고 있는 daemon 확인 필요)
 
-- API 요청 테스트 
+- API 요청 테스트(Dataset / DataService 표준규격 준수) 요청 테스트 - 20191130 기준
 ```
-$ curl -X GET 'http://localhost:8080/api/metadata?=' -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoi7YWM7Iqk7Yq4IO2UjOueq-2PvCJ9.XKPLUDfKGskCFudc9-YeUF2sSdIu-zYQIKKX0Km2KWQ' -H 'Content-Type: application/xml;charset=UTF-8'
-```
-
-- API(Dataset에 대한 표준규격 준수) 요청 테스트 
-```
-$ curl -X GET 'http://localhost:8080/api/metadata/datasets?=' -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoi7YWM7Iqk7Yq4IO2UjOueq-2PvCJ9.XKPLUDfKGskCFudc9-YeUF2sSdIu-zYQIKKX0Km2KWQ' -H 'Content-Type: application/xml;charset=UTF-8'
+$ curl -X GET 'http://localhost:8080/api/metadata' -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoi7YWM7Iqk7Yq4IO2UjOueq-2PvCJ9.XKPLUDfKGskCFudc9-YeUF2sSdIu-zYQIKKX0Km2KWQ' -H 'Content-Type: application/xml;charset=UTF-8'
 ```

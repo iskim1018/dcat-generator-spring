@@ -2,7 +2,7 @@ package kr.co.promptech.dcat.model;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name="catalogs")
@@ -17,13 +17,17 @@ public class Catalog {
     @Column(columnDefinition = "TEXT")
     private String desc;
 
-    @OneToOne(fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="user_id", referencedColumnName="id")
     private User user;
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name="category_id", referencedColumnName="id")
-    private List<Dataset> datasets;
+    private Set<Dataset> datasets;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name="catalog_id", referencedColumnName="id")
+    private Set<ApiDatum> apiData;
 
     private Date createdAt;
     private Date updatedAt;
@@ -60,12 +64,20 @@ public class Catalog {
         this.user = user;
     }
 
-    public List<Dataset> getDatasets() {
+    public Set<Dataset> getDatasets() {
         return datasets;
     }
 
-    public void setDatasets(List<Dataset> datasets) {
+    public void setDatasets(Set<Dataset> datasets) {
         this.datasets = datasets;
+    }
+
+    public Set<ApiDatum> getApiData() {
+        return apiData;
+    }
+
+    public void setApiData(Set<ApiDatum> apiData) {
+        this.apiData = apiData;
     }
 
     public Date getCreatedAt() {

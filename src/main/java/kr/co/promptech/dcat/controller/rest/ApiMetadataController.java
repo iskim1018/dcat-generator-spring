@@ -19,17 +19,13 @@ import java.util.List;
 @RequestMapping("/api/metadata")
 public class ApiMetadataController {
     private static final Logger logger = LoggerFactory.getLogger(ApiMetadataController.class);
+    private static final String TAG = "[ApiMetadataController] ";
 
     @Autowired
     private CatalogRepository catalogRepository;
 
     @Autowired
     private TokenService tokenService;
-
-    @GetMapping(value ="", produces = { MediaType.APPLICATION_JSON_VALUE })
-    public List<Catalog> index() {
-        return catalogRepository.findAll();
-    }
 
     @GetMapping(value ="", produces = { MediaType.APPLICATION_XML_VALUE })
     public String index(HttpServletRequest request, Model model) {
@@ -39,20 +35,13 @@ public class ApiMetadataController {
             List<Catalog> catalogs = catalogRepository.findAll();
             model.addAttribute("catalogs", catalogs);
 
+            logger.debug(TAG + "catalog size: " + catalogs.size());
+            for (Catalog c : catalogs) {
+                logger.debug(TAG + "dataset size: " + c.getDatasets().size());
+                logger.debug(TAG + "api size: " + c.getApiData().size());
+            }
+
             return "dcat/index.xml";
-        }
-        return "errors/401.xml";
-    }
-
-    @GetMapping(value ="/datasets", produces = { MediaType.APPLICATION_XML_VALUE })
-    public String datasets(HttpServletRequest request, Model model) {
-        String token = request.getHeader(TokenService.HEADER_STRING);
-
-        if (tokenService.isValid(token)) {
-            List<Catalog> catalogs = catalogRepository.findAll();
-            model.addAttribute("catalogs", catalogs);
-
-            return "dcat/datasets.xml";
         }
         return "errors/401.xml";
     }
