@@ -2,6 +2,7 @@
 <rdf:RDF xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:dct="http://purl.org/dc/terms/"
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcat="http://www.w3.org/ns/dcat#"
 	xmlns:vcard="http://www.w3.org/2006/vcard/ns#">
+
 	<dcat:Dataset>
 		<dct:accessRights>public</dct:accessRights>
 		<dcat:contactPoint>
@@ -19,8 +20,8 @@
 		</dct:creator>
 		<dct:description>교통사고통계</dct:description>
 		<dct:title>교통사고통계</dct:title>
-		<dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-11-25</dct:issued>
-		<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-11-25T05:19</dct:modified>
+		<dct:issued>2019-11-25</dct:issued>
+		<dct:modified>2019-11-25T05:19:17+09:00</dct:modified>
 		<dct:language>ko</dct:language>
 		<dct:publisher>
 			<foaf:Organization>
@@ -31,10 +32,10 @@
 		</dct:publisher>
 		<dct:identifier>1</dct:identifier>
 		<dcat:type>dataset</dcat:type>
-		<dcat:keyword>교통사고</dcat:keyword>
 		<dcat:keyword>교통안전법</dcat:keyword>
-		<dcat:keyword>사고통계</dcat:keyword>
 		<dcat:keyword>도로교통공단</dcat:keyword>
+		<dcat:keyword>교통사고</dcat:keyword>
+		<dcat:keyword>사고통계</dcat:keyword>
 		<dct:accrualPeriodicity rdf:resource="http://purl.org/cld/freq/monthly" />
 		<version>2.3</version>
 		<versionDescription>2.3 배포 버전입니다.</versionDescription>
@@ -42,14 +43,14 @@
 		<dcat:distribution>
 			<dcat:Distribution>
 				<dct:license rdf:resource="http://creativecommons.org/licenses/by-nc/2.0/" />
-				<dct:title>도로교통공단_월별_주야별 교통사고(2011)_20190910</dct:title>
+				<dct:title>도로교통공단_월별_주야별 교통사고(2012)_20190910</dct:title>
 				<dcat:format>CSV</dcat:format>
 				<dcat:byteSize>10485760</dcat:byteSize>
 				<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-11-25T05:19</dct:modified>
 			</dcat:Distribution>
 			<dcat:Distribution>
 				<dct:license rdf:resource="http://creativecommons.org/licenses/by-nc/2.0/" />
-				<dct:title>도로교통공단_월별_주야별 교통사고(2012)_20190910</dct:title>
+				<dct:title>도로교통공단_월별_주야별 교통사고(2011)_20190910</dct:title>
 				<dcat:format>CSV</dcat:format>
 				<dcat:byteSize>10485760</dcat:byteSize>
 				<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-11-25T05:19</dct:modified>
@@ -63,7 +64,6 @@
 			</dcat:Distribution>
 		</dcat:distribution>
 	</dcat:Dataset>
-
 	<dcat:Dataset>
 		<dct:accessRights>public</dct:accessRights>
 		<dcat:contactPoint>
@@ -81,8 +81,8 @@
 		</dct:creator>
 		<dct:description>교통사고정보를 위치데이터 기반 제공교통사고 항목 별 정보제공</dct:description>
 		<dct:title>도로교통공단 교통사고 정보</dct:title>
-		<dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-11-25</dct:issued>
-		<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-11-25T05:19</dct:modified>
+		<dct:issued>2019-11-25</dct:issued>
+		<dct:modified>2019-11-25T05:19:17+09:00</dct:modified>
 		<dct:language>ko</dct:language>
 		<dct:publisher>
 			<foaf:Organization>
@@ -103,21 +103,20 @@
 		<dcat:distribution>
 			<dcat:Distribution>
 				<dct:license rdf:resource="http://creativecommons.org/licenses/by-nc/2.0/" />
-				<dct:title>도로교통공단_교통사고다발지역_20190930</dct:title>
+				<dct:title>도로교통공단_교통사고다발지역_20191010</dct:title>
 				<dcat:format>CSV</dcat:format>
 				<dcat:byteSize>10485760</dcat:byteSize>
 				<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-11-25T05:19</dct:modified>
 			</dcat:Distribution>
 			<dcat:Distribution>
 				<dct:license rdf:resource="http://creativecommons.org/licenses/by-nc/2.0/" />
-				<dct:title>도로교통공단_교통사고다발지역_20191010</dct:title>
+				<dct:title>도로교통공단_교통사고다발지역_20190930</dct:title>
 				<dcat:format>CSV</dcat:format>
 				<dcat:byteSize>10485760</dcat:byteSize>
 				<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-11-25T05:19</dct:modified>
 			</dcat:Distribution>
 		</dcat:distribution>
 	</dcat:Dataset>
-
 	<dcat:Dataset>
 		<dct:accessRights>public</dct:accessRights>
 		<dcat:contactPoint>
@@ -135,8 +134,8 @@
 		</dct:creator>
 		<dct:description>서울시 통계정보시스템에서 제공하는 교통에 관련된 통계정보 입니다</dct:description>
 		<dct:title>서울특별시 교통 통계</dct:title>
-		<dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-11-25</dct:issued>
-		<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-11-25T05:19</dct:modified>
+		<dct:issued>2019-11-25</dct:issued>
+		<dct:modified>2019-11-25T05:19:17+09:00</dct:modified>
 		<dct:language>ko</dct:language>
 		<dct:publisher>
 			<foaf:Organization>
@@ -147,9 +146,9 @@
 		</dct:publisher>
 		<dct:identifier>3</dct:identifier>
 		<dcat:type>dataset</dcat:type>
-		<dcat:keyword>자동차</dcat:keyword>
 		<dcat:keyword>지하철</dcat:keyword>
 		<dcat:keyword>버스</dcat:keyword>
+		<dcat:keyword>자동차</dcat:keyword>
 		<dct:accrualPeriodicity rdf:resource="http://purl.org/cld/freq/monthly" />
 		<version>2.3</version>
 		<versionDescription>2.3 배포 버전입니다.</versionDescription>
@@ -157,21 +156,20 @@
 		<dcat:distribution>
 			<dcat:Distribution>
 				<dct:license rdf:resource="http://creativecommons.org/licenses/by-nc/2.0/" />
-				<dct:title>서울시 인천공항 직항로 도시 수 통계 (연간)</dct:title>
+				<dct:title>서울시 통근통학 (소요시간) 통계 (연간)</dct:title>
 				<dcat:format>CSV</dcat:format>
 				<dcat:byteSize>10485760</dcat:byteSize>
 				<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-11-25T05:19</dct:modified>
 			</dcat:Distribution>
 			<dcat:Distribution>
 				<dct:license rdf:resource="http://creativecommons.org/licenses/by-nc/2.0/" />
-				<dct:title>서울시 통근통학 (소요시간) 통계 (연간)</dct:title>
+				<dct:title>서울시 인천공항 직항로 도시 수 통계 (연간)</dct:title>
 				<dcat:format>CSV</dcat:format>
 				<dcat:byteSize>10485760</dcat:byteSize>
 				<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-11-25T05:19</dct:modified>
 			</dcat:Distribution>
 		</dcat:distribution>
 	</dcat:Dataset>
-
 	<dcat:Dataset>
 		<dct:accessRights>public</dct:accessRights>
 		<dcat:contactPoint>
@@ -189,8 +187,8 @@
 		</dct:creator>
 		<dct:description>도로교통감정사 직종별 취득현황 및 실시현황</dct:description>
 		<dct:title>도로교통감정사 직종별 취득현황 및 실시현황</dct:title>
-		<dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-11-25</dct:issued>
-		<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-11-25T05:19</dct:modified>
+		<dct:issued>2019-11-25</dct:issued>
+		<dct:modified>2019-11-25T05:19:17+09:00</dct:modified>
 		<dct:language>ko</dct:language>
 		<dct:publisher>
 			<foaf:Organization>
@@ -211,18 +209,19 @@
 		<dcat:distribution>
 			<dcat:Distribution>
 				<dct:license rdf:resource="http://creativecommons.org/licenses/by-nc/2.0/" />
-				<dct:title>도로교통사고감정사 자격검정 직종별 취득현황(2013년~2017년)</dct:title>
+				<dct:title>도로교통사고감정사 자격검정 실시현황(2013년~2017년)</dct:title>
 				<dcat:format>CSV</dcat:format>
 				<dcat:byteSize>10485760</dcat:byteSize>
 				<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-11-25T05:19</dct:modified>
 			</dcat:Distribution>
 			<dcat:Distribution>
 				<dct:license rdf:resource="http://creativecommons.org/licenses/by-nc/2.0/" />
-				<dct:title>도로교통사고감정사 자격검정 실시현황(2013년~2017년)</dct:title>
+				<dct:title>도로교통사고감정사 자격검정 직종별 취득현황(2013년~2017년)</dct:title>
 				<dcat:format>CSV</dcat:format>
 				<dcat:byteSize>10485760</dcat:byteSize>
 				<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-11-25T05:19</dct:modified>
 			</dcat:Distribution>
 		</dcat:distribution>
 	</dcat:Dataset>
+
 </rdf:RDF>

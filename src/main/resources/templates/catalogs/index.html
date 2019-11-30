@@ -5,7 +5,7 @@
     }
 </style>
 
-<div class="container" th:each="catalog : ${categories}">
+<div class="container" th:each="catalog : ${catalogs}">
     <div class="">
         <h1 th:text="${catalog.title}"></h1>
         <p th:text="${catalog.desc}"></p>

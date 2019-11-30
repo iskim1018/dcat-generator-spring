@@ -5,7 +5,7 @@
         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
         xmlns:dcat="http://www.w3.org/ns/dcat#"
 >
-    <dcat:Catalog th:each="catalog : ${categories}">
+    <dcat:Catalog th:each="catalog : ${catalogs}">
         <dct:title th:utext="${catalog.title}"></dct:title>
         <dct:description th:utext="${catalog.desc}"></dct:description>
         <dct:publisher th:if="${catalog.user != null}">

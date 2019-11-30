@@ -1,7 +1,7 @@
 package kr.co.promptech.dcat.controller.rest;
 
-import kr.co.promptech.dcat.model.Category;
-import kr.co.promptech.dcat.repository.CategoryRepository;
+import kr.co.promptech.dcat.model.Catalog;
+import kr.co.promptech.dcat.repository.CatalogRepository;
 import kr.co.promptech.dcat.service.TokenService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,18 +21,23 @@ public class ApiMetadataController {
     private static final Logger logger = LoggerFactory.getLogger(ApiMetadataController.class);
 
     @Autowired
-    private CategoryRepository categoryRepository;
+    private CatalogRepository catalogRepository;
 
     @Autowired
     private TokenService tokenService;
+
+    @GetMapping(value ="", produces = { MediaType.APPLICATION_JSON_VALUE })
+    public List<Catalog> index() {
+        return catalogRepository.findAll();
+    }
 
     @GetMapping(value ="", produces = { MediaType.APPLICATION_XML_VALUE })
     public String index(HttpServletRequest request, Model model) {
         String token = request.getHeader(TokenService.HEADER_STRING);
 
         if (tokenService.isValid(token)) {
-            List<Category> categories = categoryRepository.findAll();
-            model.addAttribute("categories", categories);
+            List<Catalog> catalogs = catalogRepository.findAll();
+            model.addAttribute("catalogs", catalogs);
 
             return "dcat/index.xml";
         }
@@ -44,8 +49,8 @@ public class ApiMetadataController {
         String token = request.getHeader(TokenService.HEADER_STRING);
 
         if (tokenService.isValid(token)) {
-            List<Category> categories = categoryRepository.findAll();
-            model.addAttribute("categories", categories);
+            List<Catalog> catalogs = catalogRepository.findAll();
+            model.addAttribute("catalogs", catalogs);
 
             return "dcat/datasets.xml";
         }

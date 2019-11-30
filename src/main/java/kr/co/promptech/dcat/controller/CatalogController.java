@@ -1,7 +1,7 @@
 package kr.co.promptech.dcat.controller;
 
-import kr.co.promptech.dcat.model.Category;
-import kr.co.promptech.dcat.repository.CategoryRepository;
+import kr.co.promptech.dcat.model.Catalog;
+import kr.co.promptech.dcat.repository.CatalogRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,12 +23,12 @@ public class CatalogController {
     SpringTemplateEngine springTemplateEngine;
 
     @Autowired
-    private CategoryRepository categoryRepository;
+    private CatalogRepository catalogRepository;
 
     @GetMapping(value ="", produces = { MediaType.TEXT_HTML_VALUE })
     public String index(Model model) {
-        List<Category> categories = categoryRepository.findAll();
-        model.addAttribute("categories", categories);
+        List<Catalog> catalogs = catalogRepository.findAll();
+        model.addAttribute("catalogs", catalogs);
 
         return "catalogs/index";
     }
@@ -36,8 +36,8 @@ public class CatalogController {
     @GetMapping(value ="", produces = { MediaType.APPLICATION_XML_VALUE })
     public String indexXml(Model model){
         logger.debug("call indexXml");
-        List<Category> categories = categoryRepository.findAll();
-        model.addAttribute("categories", categories);
+        List<Catalog> catalogs = catalogRepository.findAll();
+        model.addAttribute("catalogs", catalogs);
 
         return "catalogs/index.xml";
     }

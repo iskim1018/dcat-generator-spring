@@ -7,7 +7,7 @@
         xmlns:vcard="http://www.w3.org/2006/vcard/ns#"
         xmlns:th="http://www.thymeleaf.org"
 >
-    <th:block th:each="catalog : ${categories}">
+    <th:block th:each="catalog : ${catalogs}">
         <dcat:Dataset th:each="dataset : ${catalog.datasets}">
             <dct:accessRights>public</dct:accessRights>
             <dcat:contactPoint>
@@ -25,8 +25,8 @@
             </dct:creator>
             <dct:description th:utext="${dataset.desc}">A longer description of dataset 1: includes three distributions, a CSV file, a PDF file and an API. Some special characters: Θεσσαλονίκη.</dct:description>
             <dct:title th:utext="${dataset.title}">Example dataset 1</dct:title>
-            <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date" th:text="${#dates.format(dataset.createdAt, 'yyyy-MM-dd')}"></dct:issued>
-            <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime" th:utext="${#dates.format(dataset.updatedAt, 'yyyy-MM-dd''T''HH:mm')}"></dct:modified>
+            <dct:issued th:text="${#dates.format(dataset.createdAt, 'yyyy-MM-dd')}"></dct:issued>
+            <dct:modified th:utext="${#dates.format(dataset.updatedAt, 'yyyy-MM-dd''T''HH:mm:ss+09:00')}"></dct:modified>
             <dct:language>ko</dct:language>
             <dct:publisher>
                 <foaf:Organization>
