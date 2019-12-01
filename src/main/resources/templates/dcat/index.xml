@@ -11,16 +11,17 @@
         <dcat:Dataset th:each="dataset : ${catalog.datasets}">
             <dct:accessRights>public</dct:accessRights>
             <dcat:contactPoint>
-                <vcard:Organization>
-                    <vcard:fn>데이터셋 담당자</vcard:fn>
-                    <vcard:hasEmail rdf:resource="mailto:contact@some.org" th:attr="'rdf:resource'=${dataset.user.email}" />
-                </vcard:Organization>
+                <vcard:Individual>
+                    <vcard:fn th:utext="${dataset.user.name}"/>
+                    <vcard:hasEmail th:attr="'rdf:resource'=${dataset.user.email}"/>
+                    <vcard:hasTelephone th:attr="'rdf:resource'=${dataset.user.phone}"/>
+                </vcard:Individual>
             </dcat:contactPoint>
             <dct:creator>
                 <foaf:Organization>
-                    <foaf:name th:text="${dataset.user.email}">Publishing Organization for dataset 1</foaf:name>
-                    <foaf:mbox th:text="${dataset.user.email}">contact@some.org</foaf:mbox>
-                    <foaf:homepage>http://www.promptech.co.kr</foaf:homepage>
+                    <foaf:name th:utext="${catalog.platform.name}"/>
+                    <foaf:mbox th:attr="'rdf:resource'=${catalog.platform.email}"/>
+                    <foaf:phone th:attr="'rdf:resoure'=${catalog.platform.phone}"/>
                 </foaf:Organization>
             </dct:creator>
             <dct:description th:utext="${dataset.desc}">A longer description of dataset 1: includes three distributions, a CSV file, a PDF file and an API. Some special characters: Θεσσαλονίκη.</dct:description>
@@ -30,9 +31,9 @@
             <dct:language>ko</dct:language>
             <dct:publisher>
                 <foaf:Organization>
-                    <foaf:name th:text="${dataset.user.email}">Publishing Organization for dataset 1</foaf:name>
-                    <foaf:mbox th:text="${dataset.user.email}">contact@some.org</foaf:mbox>
-                    <foaf:homepage>http://www.promptech.co.kr</foaf:homepage>
+                    <foaf:name th:utext="${catalog.platform.name}"/>
+                    <foaf:mbox th:attr="'rdf:resoure'=${catalog.platform.email}"/>
+                    <foaf:phone th:attr="'rdf:resoure'=${catalog.platform.phone}"/>
                 </foaf:Organization>
             </dct:publisher>
             <dct:identifier th:text="${dataset.id}"></dct:identifier>
@@ -56,16 +57,17 @@
         <dcat:DataService th:each="api : ${catalog.apiData}">
             <dct:accessRights>public</dct:accessRights>
             <dcat:contactPoint>
-                <vcard:Organization>
-                    <vcard:fn>데이터셋 담당자</vcard:fn>
-                    <vcard:hasEmail rdf:resource="mailto:contact@some.org" th:attr="'rdf:resource'=${api.user.email}" />
-                </vcard:Organization>
+                <vcard:Individual>
+                    <vcard:fn th:utext="${api.user.name}"/>
+                    <vcard:hasEmail th:attr="'rdf:resource'=${api.user.email}"/>
+                    <vcard:hasTelephone th:attr="'rdf:resource'=${api.user.phone}"/>
+                </vcard:Individual>
             </dcat:contactPoint>
             <dct:creator>
                 <foaf:Organization>
-                    <foaf:name th:text="${api.user.email}">Publishing Organization for dataset 1</foaf:name>
-                    <foaf:mbox th:text="${api.user.email}">contact@some.org</foaf:mbox>
-                    <foaf:homepage>http://www.promptech.co.kr</foaf:homepage>
+                    <foaf:name th:utext="${catalog.platform.name}"/>
+                    <foaf:mbox th:attr="'rdf:resource'=${catalog.platform.email}"/>
+                    <foaf:phone th:attr="'rdf:resource'=${catalog.platform.phone}"/>
                 </foaf:Organization>
             </dct:creator>
             <dct:description th:utext="${api.desc}">A longer description of dataset 1: includes three distributions, a CSV file, a PDF file and an API. Some special characters: Θεσσαλονίκη.</dct:description>
@@ -75,9 +77,9 @@
             <dct:language>ko</dct:language>
             <dct:publisher>
                 <foaf:Organization>
-                    <foaf:name th:text="${api.user.email}">Publishing Organization for dataset 1</foaf:name>
-                    <foaf:mbox th:text="${api.user.email}">contact@some.org</foaf:mbox>
-                    <foaf:homepage>http://www.promptech.co.kr</foaf:homepage>
+                    <foaf:name th:utext="${catalog.platform.name}"/>
+                    <foaf:mbox th:attr="'rds:resource'=${catalog.platform.email}"/>
+                    <foaf:phone th:attr="'rdf:resource'=${catalog.platform.phone}"/>
                 </foaf:Organization>
             </dct:publisher>
             <dct:identifier th:text="${api.id}"></dct:identifier>

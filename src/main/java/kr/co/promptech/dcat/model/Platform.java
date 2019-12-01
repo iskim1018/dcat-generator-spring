@@ -12,8 +12,9 @@ public class Platform {
     private Long id;
 
     private String title;
-    private String chargerName;
-    private String chargerEmail;
+    private String name;
+    private String email;
+    private String phone;
     private String apiUrl;
     private String apiKey;
     private Date lastFetched;
@@ -34,20 +35,28 @@ public class Platform {
         this.title = title;
     }
 
-    public String getChargerName() {
-        return chargerName;
+    public String getName() {
+        return name;
     }
 
-    public void setChargerName(String chargerName) {
-        this.chargerName = chargerName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getChargerEmail() {
-        return chargerEmail;
+    public String getEmail() {
+        return "mailto:" + email;
     }
 
-    public void setChargerEmail(String chargerEmail) {
-        this.chargerEmail = chargerEmail;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return "tel:" + phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getApiUrl() {

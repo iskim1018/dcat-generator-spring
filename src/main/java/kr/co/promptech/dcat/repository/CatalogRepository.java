@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface CatalogRepository extends JpaRepository<Catalog, Long> {
     @Query("SELECT DISTINCT c FROM Catalog c " +
-            "INNER JOIN FETCH c.user " +
+            "INNER JOIN FETCH c.platform " +
             "LEFT JOIN FETCH c.datasets d " +
             "INNER JOIN FETCH d.user " +
             "LEFT JOIN FETCH c.apiData ad " +

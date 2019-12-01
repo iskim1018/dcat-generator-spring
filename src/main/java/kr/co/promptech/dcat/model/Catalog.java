@@ -18,11 +18,11 @@ public class Catalog {
     private String desc;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="user_id", referencedColumnName="id")
-    private User user;
+    @JoinColumn(name="platform_id", referencedColumnName="id")
+    private Platform platform;
 
     @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name="category_id", referencedColumnName="id")
+    @JoinColumn(name="catalog_id", referencedColumnName="id")
     private Set<Dataset> datasets;
 
     @OneToMany(fetch = FetchType.LAZY)
@@ -56,12 +56,12 @@ public class Catalog {
         this.desc = desc;
     }
 
-    public User getUser() {
-        return user;
+    public Platform getPlatform() {
+        return platform;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setPlatform(Platform pltform) {
+        this.platform = platform;
     }
 
     public Set<Dataset> getDatasets() {
